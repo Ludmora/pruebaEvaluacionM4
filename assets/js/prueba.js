@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             id: "6"
         }
     ];
- // Llamada para inyectar productos al cargar la página
+
  cardInjection(articulos);
     // Función para inyectar tarjetas de productos
     function cardInjection(articulos) {
@@ -81,8 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         addToCarButtons.forEach((button, index) => {
             button.addEventListener('click', () => addToCar(articulos[index]));
         });
-    }
-
+    }     
     function addToCar(producto) {
         const productoId = producto.id;
         const productoNombre = producto.nombre;
@@ -128,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Función para remover un producto del carrito uno por uno
+
     function removeOneItem(id) {
         const productoEnCarrito = cart.find(item => item.id === id);
         if (productoEnCarrito) {
@@ -141,19 +140,19 @@ document.addEventListener('DOMContentLoaded', function () {
         updateCartUI();
     }
 
-    // Función para remover completamente un producto del carrito
+   
     function removeItem(id) {
         cart = cart.filter(item => item.id !== id);
         updateCartUI();
     }
 
-    // Función para vaciar el carrito
+    
     function clearcart() {
         cart = [];
         updateCartUI();
     }
 
-    // Función para mostrar el total al finalizar la compra
+   
     function finalizarCompraPrompt() {
         if (cart.length > 0) { 
             let resumenCompra = 'Resumen de su compra:\n';
